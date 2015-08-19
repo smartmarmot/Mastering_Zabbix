@@ -1,0 +1,46 @@
+digraph TrigDeps {
+graph[rankdir=LR]
+node[fontsize=10]
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBaseboard Temp Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nBaseboard Temp Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nBaseboard Temp Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBaseboard Temp Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +1.05V PCH Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nBB +1.05V PCH Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nBB +1.05V PCH Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +1.05V PCH Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +1.1V P1 Vccp Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nBB +1.1V P1 Vccp Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nBB +1.1V P1 Vccp Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +1.1V P1 Vccp Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +1.5V P1 DDR3 Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nBB +1.5V P1 DDR3 Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nBB +1.5V P1 DDR3 Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +1.5V P1 DDR3 Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nPower" -> "Template IPMI Intel SR1530:\nBB +1.8V SM Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nBB +1.8V SM Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1530:\nBB +1.8V SM Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nPower" -> "Template IPMI Intel SR1530:\nBB +1.8V SM Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nPower" -> "Template IPMI Intel SR1530:\nBB +3.3V Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +3.3V Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nBB +3.3V Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1530:\nBB +3.3V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nPower" -> "Template IPMI Intel SR1530:\nBB +3.3V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nBB +3.3V Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nBB +3.3V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +3.3V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nBB +3.3V STBY Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1530:\nBB +3.3V STBY Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nBB +3.3V STBY Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nBB +3.3V STBY Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +5.0V Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nPower" -> "Template IPMI Intel SR1530:\nBB +5.0V Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nBB +5.0V Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nBB +5.0V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nBB +5.0V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nBB +5.0V Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1530:\nBB +5.0V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nPower" -> "Template IPMI Intel SR1530:\nBB +5.0V Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1530:\nBB Ambient Temp Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1530:\nBB Ambient Temp Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nFront Panel Temp Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nFront Panel Temp Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nFront Panel Temp Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nFront Panel Temp Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nSystem Fan 2 Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nSystem Fan 2 Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nSystem Fan 2 Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nSystem Fan 2 Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nSystem Fan 3 Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nPower" -> "Template IPMI Intel SR1630:\nSystem Fan 3 Non-Critical [{ITEM.VALUE}]";
+"Template IPMI Intel SR1630:\nSystem Fan 3 Critical [{ITEM.VALUE}]" -> "Template IPMI Intel SR1630:\nSystem Fan 3 Non-Critical [{ITEM.VALUE}]";
+"Delta:\nZabbix agent on {HOST.NAME} is unreachable for 5 minutes" -> "Alpha:\nZabbix agent on {HOST.NAME} is unreachable for 5 minutes";
+"Gamma:\nZabbix agent on {HOST.NAME} is unreachable for 5 minutes" -> "Alpha:\nZabbix agent on {HOST.NAME} is unreachable for 5 minutes";
+"Alpha:\nZabbix agent on {HOST.NAME} is unreachable for 5 minutes" -> "Beta:\nZabbix agent on {HOST.NAME} is unreachable for 5 minutes";
+}

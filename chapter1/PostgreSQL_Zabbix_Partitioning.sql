@@ -55,8 +55,8 @@ $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
 ALTER FUNCTION trg_partition()
-  OWNER TO postgres;
-Create a trigger for each (clock based) table you want to partition
+  OWNER TO zabbix;
+--Create a trigger for each (clock based) table you want to partition
 CREATE TRIGGER partition_trg BEFORE INSERT ON history           FOR EACH ROW EXECUTE PROCEDURE trg_partition('day');
 CREATE TRIGGER partition_trg BEFORE INSERT ON history_sync      FOR EACH ROW EXECUTE PROCEDURE trg_partition('day');
 CREATE TRIGGER partition_trg BEFORE INSERT ON history_uint      FOR EACH ROW EXECUTE PROCEDURE trg_partition('day');
@@ -65,14 +65,14 @@ CREATE TRIGGER partition_trg BEFORE INSERT ON history_log       FOR EACH ROW EXE
 CREATE TRIGGER partition_trg BEFORE INSERT ON trends            FOR EACH ROW EXECUTE PROCEDURE trg_partition('month');
 CREATE TRIGGER partition_trg BEFORE INSERT ON trends_uint       FOR EACH ROW EXECUTE PROCEDURE trg_partition('month');
 
-
-DROP TRIGGER partition_trg ON history;
-DROP TRIGGER partition_trg ON history_sync;
-DROP TRIGGER partition_trg ON history_uint;
-DROP TRIGGER partition_trg ON history_str_sync;
-DROP TRIGGER partition_trg ON history_log;
-DROP TRIGGER partition_trg ON trends;
-DROP TRIGGER partition_trg ON trends_uint;
+-- TO DISABLE PARTITIONING UNCOMMENT THIS SECTION
+--DROP TRIGGER partition_trg ON history;
+--DROP TRIGGER partition_trg ON history_sync;
+--DROP TRIGGER partition_trg ON history_uint;
+--DROP TRIGGER partition_trg ON history_str_sync;
+--DROP TRIGGER partition_trg ON history_log;
+--DROP TRIGGER partition_trg ON trends;
+--DROP TRIGGER partition_trg ON trends_uint;
 
 
 -- Function: delete_partitions(interval, text)
@@ -129,6 +129,6 @@ $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
 ALTER FUNCTION delete_partitions(INTERVAL, text)
-  OWNER TO postgres;
+  OWNER TO zabbix;
   
   
